@@ -1,5 +1,3 @@
-import type { Project } from "~/types";
-
 import type { LucideIcon } from "lucide-react";
 import {
   Atom,
@@ -28,6 +26,23 @@ export type ProjectCategory =
   | "Learning"
   | "Bootcamp"
   | "Other";
+
+export interface Project {
+  slug: string;
+  title: string;
+  shortDescription: string;
+  longDescription: string[];
+  category: ProjectCategory;
+  tags: string[];
+  image: string;
+  liveLink?: string;
+  githubLink?: string;
+  features?: string[];
+  technologiesUsed?: string[];
+  challenges?: string[];
+  learnings?: string[];
+  screenshots?: { src: string; alt: string }[];
+}
 
 // Map skill names to Lucide React icons for display
 export const skillIcons: { [key: string]: LucideIcon } = {
@@ -68,6 +83,50 @@ export const skillIcons: { [key: string]: LucideIcon } = {
 };
 
 export const projectsData: Project[] = [
+  {
+    slug: "ecommerce-store",
+    title: "E-commerce Store",
+    shortDescription:
+      "A full-featured e-commerce platform with product management and cart feature.",
+    longDescription: [
+      "Developed a comprehensive address book publiclication that enables users to manage their contacts efficiently. The solution features full CRUD functionality with intuitive search and filtering capabilities.",
+      "Implemented a clean, modern UI using Tailwind CSS that adapts seamlessly across mobile and desktop devices. The publiclication leverages browser local storage to maintain data persistence between sessions.",
+      "Focus on UX principles resulted in a zero-learning-curve interface with instant feedback for user actions. Form validation ensures data integrity for all contact information.",
+    ],
+    category: "Frontend",
+    tags: ["JavaScript", "Tailwind CSS", "LocalStorage", "Responsive Design"],
+    image: "/assets/images/projects/address-book.png",
+    liveLink: "https://fitlex.cakrasera.com",
+    githubLink: "https://github.com/CakraSera/fitlex",
+    features: [
+      "Add/edit/delete contacts with validation",
+      "Instant search and filtering",
+      "Local storage persistence",
+      "Responsive mobile-first design",
+      "Dark/light mode toggle",
+    ],
+    technologiesUsed: ["React", "HTML", "Tailwind CSS"],
+    challenges: [
+      "Implementing efficient local storage synchronization",
+      "Creating responsive layouts for complex contact cards",
+      "Developing real-time search with debounce functionality",
+    ],
+    learnings: [
+      "Advanced DOM manipulation techniques",
+      "Browser storage API implementation",
+      "Performance optimization for filter operations",
+    ],
+    screenshots: [
+      {
+        src: "/assets/images/projects/address-book-1.png",
+        alt: "Contact list view",
+      },
+      {
+        src: "/assets/images/projects/address-book-2.png",
+        alt: "Contact detail view",
+      },
+    ],
+  },
   {
     slug: "address-book",
     title: "Address Book",

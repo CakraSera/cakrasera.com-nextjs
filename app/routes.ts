@@ -13,4 +13,5 @@ export default [
   ]),
   route("contact", "routes/contact.tsx"),
   route("admin", "routes/admin/index.tsx"),
+  route("about", "routes/about.tsx"),
 ] satisfies RouteConfig;

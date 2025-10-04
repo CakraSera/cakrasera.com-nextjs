@@ -16,7 +16,7 @@ export const WorkExperience: WorkExperienceItem[] = [
   {
     id: "dlfslfsd",
     companyName: "DataOn (PT Indodev Niaga Internet)",
-    position: "Implementation Consultant Jr",
+    position: "Implementation Consultant (Technical Customization Focus)",
     logo: "./images/dataon-logo.png",
     startDate: new Date("2024-05-27"),
     endDate: new Date(),
@@ -29,7 +29,7 @@ export const WorkExperience: WorkExperienceItem[] = [
       { name: "Git", icon: "https://via.placeholder.com/20" },
     ],
     jobDescription: [
-      "Developing and implementing custom web applications using React.js, CFML, HTML, CSS, and JavaScript to meet specific client requirements and maintained web applications",
+      "Developing and implementing custom web applications using React.js, Golang, CFML, HTML, CSS, and JavaScript to meet specific client requirements and maintained web applications",
       "Collaborating closely with Implementation Consultants to ensure deliverables align with client expectations and business objectives",
       "Maintaining consistent code quality through Git version control, Gitlab for CI/CD, and SonarQube for code quality assurance",
       "Adapting and extending DataOn's core applications to create customized solutions for enterprise clients",

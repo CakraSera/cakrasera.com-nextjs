@@ -117,7 +117,7 @@ export default function Home() {
                 alt="Developer portrait"
                 className="object-cover"
               />
-            </div>
+            </div>  
           </div>
         </div>
       </section>
