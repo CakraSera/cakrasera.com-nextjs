@@ -183,11 +183,18 @@ export default function Home() {
               "HTML & CSS",
               "JavaScript",
               "React",
+              "React Router Framework v7",
               "Node.js",
-              "Next.js",
+              "Express",
+              "Hono Js",
+              "Golang",
+              "Vue.js",
+              "Nuxt.js",
               "TypeScript",
               "Tailwind CSS",
               "MongoDB",
+              "MySQL",
+              "PostgreSQL",
             ].map((skill, index) => {
               const Icon = skillIcons[skill] || Code; // Fallback to Code icon if specific not found
               return (

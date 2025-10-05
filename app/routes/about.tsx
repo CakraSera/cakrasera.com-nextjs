@@ -126,7 +126,7 @@ export default function AboutPage() {
             </p>
             <p>
               These days, I’m practicing component-driven development with
-              React, using BHVN(Bun + Hono + Vite + React) to ship fullstack
+              React, using BHVR(Bun + Hono + Vite + React) to ship fullstack
               features quickly, and deploying to Vercel. I still learn every day
               – whether it’s new frameworks, design patterns, or best
               practices💪.
@@ -136,25 +136,6 @@ export default function AboutPage() {
           {/* Simple timeline */}
           <div className="mt-6 space-y-6">
             {[
-              {
-                year: "2017 - 2018",
-                title:
-                  "First I touched a Computer Science at Senior High School. ✨",
-                points: [
-                  "I tried out for the city-level Computer Olympiad twice. I failed the first test but passed on my second attempt the following year.",
-                  "I took 2nd place in the city-level Computer Olympiad but didn't make it past the provincials.",
-                ],
-              },
-              {
-                year: "2019 - 2024",
-                title:
-                  "Informatic Engineering: My Gateway to Computer Science 🤔🔍",
-                points: [
-                  "Focused on web fundamentals, data structures, and software design",
-                  "Completed a thesis on 'APPLICATION OF APRIORI ALGORITHM IN THE DESIGN OF A WEB-BASED BOOK RESERVATION SYSTEM (CASE STUDY: PALANGKA RAYA UNIVERSITY LIBRARY)'",
-                  "Joined organizations like Himpunan Mahasiswa Teknik Informatika (HMTI) to develop teamwork and leadership skills",
-                ],
-              },
               {
                 year: "2021",
                 title:
@@ -176,9 +157,30 @@ export default function AboutPage() {
               {
                 year: "2022",
                 title:
+                  "✨ My Next Chapter: Joining PT Qatros Teknologi Indonesia as a Frontend Web Engineer Intern!",
+                points: [
+                  "Expanded my frontend expertise beyond bootcamp curriculum with Vue.js & Nuxt.js",
+                  "Final project 'Gompu': Integrated WebRTC, booking management & payment gateway",
+                  "Exploring Yogyakarta's rich culture through its neighborhoods and culinary scenes",
+                ],
+              },
+              {
+                year: "2022",
+                title:
                   "After Bootcamp, I got internship as Frontend Web Engineer🥹 - PT Qatros Teknologi Indonesia",
                 points: [
-                  "I think I need to learn more from my past project, so I join Bootcamps Alterra Academy for learning Frontend Web Development.",
+                  "Expanded my frontend expertise beyond bootcamp curriculum with Vue.js & Nuxt.js",
+                  "Final project 'Gompu': Integrated WebRTC, booking management & payment gateway",
+                  "Exploring Yogyakarta's rich culture through its neighborhoods and culinary scenes",
+                ],
+              },
+              {
+                year: "2023 - 2025",
+                title:
+                  "From Frontend to Full-Stack: My Intensive Journey with Generasi GIGIH & Bearmentor🚀",
+                points: [
+                  "In Generasi GIGIH 3.0, I learned MERN Stack(MongoDB, Express Js, React Js, and Node Js. And finally I built a Fullstack Project using MERN Stack.",
+                  "In Bearmentor, I learned about Clean Architecture, SOLID Principles, Design Patterns, and Best Practices in Real-World Projects. I built several projects using BEHVR (Bun + Hono + Vite + React) to ship fullstack features quickly, and deploying to Vercel.",
                 ],
               },
             ].map((item, idx) => (
@@ -224,30 +226,29 @@ export default function AboutPage() {
                     title: "Languages",
                     items: [
                       { icon: Code, text: "JavaScript, TypeScript" },
-                      { icon: Zap, text: "Python, Go, Java" },
+                      { icon: Zap, text: "Go" },
                     ],
                   },
                   {
                     title: "Frameworks",
                     items: [
-                      { icon: Atom, text: "React, Next.js, Node.js" },
-                      { icon: Code, text: "FastAPI, Flask, Nest.js" },
+                      {
+                        icon: Atom,
+                        text: "React Js, React Router Framework, Express Js, Hono Js",
+                      },
+                      { icon: Code, text: "Tailwind, Shadcn UI" },
                     ],
                   },
                   {
-                    title: "Cloud & Databases",
+                    title: "Databases",
                     items: [
-                      { icon: Cloud, text: "AWS, GCP" },
-                      { icon: Database, text: "MongoDB, Redis, DynamoDB" },
-                      { icon: Server, text: "PostgreSQL, MySQL" },
+                      { icon: Database, text: "MongoDB, PostgreSQL, MySQL" },
                     ],
                   },
                   {
                     title: "Developer Tools",
                     items: [
-                      { icon: Wrench, text: "Docker, Git, VS Code" },
-                      { icon: GitBranch, text: "Kafka, RabbitMQ" },
-                      { icon: Palette, text: "SonarQube, Prometheus" },
+                      { icon: Wrench, text: "Docker, Git, VS Code, Figma" },
                     ],
                   },
                 ].map((card, idx) => (
