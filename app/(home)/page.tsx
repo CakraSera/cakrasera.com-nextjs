@@ -42,7 +42,21 @@ const skillIcons: { [key: string]: React.ElementType } = {
 export const metadata: Metadata = {
   title: "Home",
   description:
-    "Personal portfolio website showcasing my skills and projects as a fullstack web developer.",
+    "Rakhel Cakra Kusumadinata Sera - Fullstack Web Developer from Indonesia. Experienced in React, Next.js, Node.js, TypeScript, Vue.js, and modern web technologies. View my projects and experience.",
+  openGraph: {
+    title: "Rakhel Cakra Kusumadinata Sera | Fullstack Web Developer",
+    description:
+      "Fullstack Web Developer specializing in React, Next.js, Node.js, and modern web technologies.",
+    url: "https://cakrasera.com",
+    images: [
+      {
+        url: "/images/web-profile-img.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Rakhel Cakra Kusumadinata Sera",
+      },
+    ],
+  },
 };
 
 export default function Home() {
@@ -56,13 +70,19 @@ export default function Home() {
               Open to opportunities
             </Badge>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-              Hi, I'm <span className="text-primary">Cakra 👋</span>
+              Hi, I&apos;m{" "}
+              <span className="text-primary">
+                Rakhel Cakra Kusumadinata Sera 👋
+              </span>
               <br />
-              Fullstack Web Developer
+              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+                Fullstack Web Developer
+              </span>
             </h1>
             <p className="text-muted-foreground mx-auto max-w-md text-base sm:text-lg md:mx-0 md:text-xl">
               Passionate about building web applications and constantly learning
-              new technologies.
+              new technologies. Experienced in React, Next.js, Node.js, Vue.js,
+              and TypeScript.
             </p>
             <div className="flex flex-wrap justify-center gap-4 md:justify-start">
               <Button asChild>
@@ -168,7 +188,7 @@ export default function Home() {
           <div className="mx-auto max-w-3xl space-y-4 text-center">
             <h2 className="text-3xl font-bold md:text-4xl">My Skills</h2>
             <p className="text-muted-foreground text-lg">
-              Technologies I've been working with recently.
+              Technologies I&apos;ve been working with recently.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
@@ -305,10 +325,12 @@ export default function Home() {
       {/* CTA Section */}
       <section className="py-16">
         <div className="container mx-auto max-w-3xl space-y-6 text-center">
-          <h2 className="text-3xl font-bold md:text-4xl">Let's Connect!</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">
+            Let&apos;s Connect!
+          </h2>
           <p className="text-muted-foreground text-lg">
-            I'm looking for opportunities to grow as a developer and contribute
-            to meaningful projects.
+            I&apos;m looking for opportunities to grow as a developer and
+            contribute to meaningful projects.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button size="lg" asChild>

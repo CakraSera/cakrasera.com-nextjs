@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import {
   Briefcase,
   Code,
@@ -13,7 +12,6 @@ import {
   School,
   Atom,
 } from "lucide-react";
-import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 
 export default function AboutPage() {
@@ -28,12 +26,17 @@ export default function AboutPage() {
               About Me
             </Badge>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-              Hi, I'm Cakra — a fullstack web developer. 😎
+              Hi, I&apos;m Rakhel Cakra Kusumadinata Sera — a fullstack web
+              developer. 😎
             </h1>
             <p className="text-muted-foreground text-lg">
-              Hey, I'm Cakra (full name: Rakhel Cakra Kusumadinata Sera) – a
-              full-stack web developer with a flair for client-side magic. My
-              motto? <em>"Try something. If it's failed then learn faster."</em>{" "}
+              Hey, I&apos;m Cakra (full name: Rakhel Cakra Kusumadinata Sera) –
+              a full-stack web developer with a flair for client-side magic. My
+              motto?{" "}
+              <em>
+                &quot;Try something. If it&apos;s failed then learn
+                faster.&quot;
+              </em>{" "}
               🚀
             </p>
 
@@ -100,17 +103,17 @@ export default function AboutPage() {
             <p>
               I kicked off my tech adventure with a degree in Informatic
               Engineering from Universitas Palangka Raya. My first gig? Building
-              the frontend for Narai Coder's community web using HTML, CSS, and
+              the frontend for Narai Coder&apos;s community web using HTML, CSS, and
               Bootstrap. But I knew it could be better – so I leveled up through
-              bootcamps like "How to be an Ideal Top Search React JS Front-End
-              Engineer," Generasi GIGIH Full Stack Engineer, and Bearmentor
+              bootcamps like &quot;How to be an Ideal Top Search React JS Front-End
+              Engineer,&quot; Generasi GIGIH Full Stack Engineer, and Bearmentor
               Batch 8 (shoutout to Mas Haidar Hanif for the awesome
               mentorship!🫡).
             </p>
             <p>
-              These days, I'm practicing component-driven development with
+              These days, I&apos;m practicing component-driven development with
               React, using Next.js to ship fullstack features quickly, and
-              deploying to Vercel. I still learn every day – whether it's new
+              deploying to Vercel. I still learn every day – whether it&apos;s new
               frameworks, design patterns, or best practices💪.
             </p>
           </div>
@@ -139,16 +142,6 @@ export default function AboutPage() {
               {
                 year: "2022",
                 title:
-                  "✨ My Next Chapter: Joining PT Qatros Teknologi Indonesia as a Frontend Web Engineer Intern!",
-                points: [
-                  "Expanded my frontend expertise beyond bootcamp curriculum with Vue.js & Nuxt.js",
-                  "Final project 'Gompu': Integrated WebRTC, booking management & payment gateway",
-                  "Exploring Yogyakarta's rich culture through its neighborhoods and culinary scenes",
-                ],
-              },
-              {
-                year: "2022",
-                title:
                   "After Bootcamp, I got internship as Frontend Web Engineer🥹 - PT Qatros Teknologi Indonesia",
                 points: [
                   "Expanded my frontend expertise beyond bootcamp curriculum with Vue.js & Nuxt.js",
@@ -161,7 +154,7 @@ export default function AboutPage() {
                 title:
                   "From Frontend to Full-Stack: My Intensive Journey with Generasi GIGIH & Bearmentor🚀",
                 points: [
-                  "In Generasi GIGIH 3.0, I learned MERN Stack(MongoDB, Express Js, React Js, and Node Js. And finally I built a Fullstack Project using MERN Stack.",
+                  "In Generasi GIGIH 3.0, I learned MERN Stack(MongoDB, Express Js, React Js, and Node Js). And finally I built a Fullstack Project using MERN Stack.",
                   "In Bearmentor, I learned about Clean Architecture, SOLID Principles, Design Patterns, and Best Practices in Real-World Projects. I built several projects using Next.js to ship fullstack features quickly, and deploying to Vercel.",
                 ],
               },
@@ -265,11 +258,11 @@ export default function AboutPage() {
           <p className="text-muted-foreground">
             What sets me apart? My passion for sports – gym for strength,
             running for endurance, badminton and basketball for team strategy.
-            It's like full-stack dev: I treat each workout like building an
+            It&apos;s like full-stack dev: I treat each workout like building an
             end-to-end app, tweaking stacks (Node.js + React, anyone?) until the
             flow is perfect, APIs integrate smoothly, and everything scales. My
-            motto? "Try something. If it's failed then learn faster." From buggy
-            early projects, I've bounced back via intense bootcamps, Udemy
+            motto? &quot;Try something. If it&apos;s failed then learn faster.&quot; From buggy
+            early projects, I&apos;ve bounced back via intense bootcamps, Udemy
             self-learning, and tools like Docker – turning setbacks into
             scalable wins. Resilience is key in this fast-paced tech world, just
             like an athlete rising after a loss.
