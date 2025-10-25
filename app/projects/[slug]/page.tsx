@@ -14,7 +14,7 @@ import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   console.log(projectsData);
-  
+
   return projectsData.map((project) => ({
     slug: project.slug,
   }));
@@ -25,10 +25,10 @@ export default async function ProjectDetail({
 }: {
   params: { slug: string };
 }) {
-  console.log("🚀 ~ ProjectDetail ~ params:", params)
-  const slug = (await params).slug
+  console.log("🚀 ~ ProjectDetail ~ params:", params);
+  const slug = (await params).slug;
   const project = projectsData.find((p) => p.slug === slug);
-  console.log("🚀 ~ ProjectDetail ~ project:", projectsData)
+  console.log("🚀 ~ ProjectDetail ~ project:", projectsData);
 
   if (!project) {
     notFound();
@@ -123,63 +123,6 @@ export default async function ProjectDetail({
                   className="bg-background flex items-start gap-3 rounded-lg border p-4 shadow-sm">
                   <CheckCircle className="text-primary mt-1 h-5 w-5 flex-shrink-0" />
                   <p className="text-muted-foreground">{feature}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Challenges & Learnings */}
-        {(project?.challenges && project.challenges.length > 0) ||
-        (project?.learnings && project.learnings.length > 0) ? (
-          <div className="grid gap-8 md:grid-cols-2">
-            {project.challenges && project.challenges.length > 0 && (
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold">Challenges</h2>
-                <ul className="space-y-3">
-                  {project.challenges.map((challenge, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <Wrench className="text-destructive mt-1 h-5 w-5 flex-shrink-0" />
-                      <p className="text-muted-foreground">{challenge}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-            {project.learnings && project.learnings.length > 0 && (
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold">Learnings</h2>
-                <ul className="space-y-3">
-                  {project.learnings.map((learning, index) => (
-                    <li key={index} className="flex items-start gap-3">
-                      <Lightbulb className="mt-1 h-5 w-5 flex-shrink-0 text-green-500" />
-                      <p className="text-muted-foreground">{learning}</p>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        ) : null}
-
-        {/* Screenshots */}
-        {project?.screenshots && project.screenshots.length > 0 && (
-          <div className="space-y-6">
-            <h2 className="text-center text-3xl font-bold">Screenshots</h2>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {project.screenshots.map((screenshot, index) => (
-                <div
-                  key={index}
-                  className="relative h-64 overflow-hidden rounded-lg border shadow-md">
-                  <Image
-                    src={screenshot.src || "/placeholder.svg"}
-                    alt={screenshot.alt}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 to-transparent p-4">
-                    <p className="text-sm text-white">{screenshot.alt}</p>
-                  </div>
                 </div>
               ))}
             </div>
