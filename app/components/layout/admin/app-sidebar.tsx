@@ -31,7 +31,8 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Link, useLocation } from "react-router";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const menuItems = [
   {
@@ -63,7 +64,7 @@ const menuItems = [
 
 export function AppSidebar() {
   //   const { user, logout } = useAuth();
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const user = {
     avatar: "",
     name: "Rakhel Cakra",
@@ -94,7 +95,7 @@ export function AppSidebar() {
               {menuItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild isActive={pathname === item.url}>
-                    <Link to={item.url}>
+                    <Link href={item.url}>
                       <item.icon className="h-4 w-4" />
                       <span>{item.title}</span>
                     </Link>

@@ -1,12 +1,15 @@
+"use client";
+
 import { useState } from "react";
 import { Menu } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { useLocation, Link } from "react-router";
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
-  const { pathname } = useLocation();
+  const pathname = usePathname();
 
   const routes = [
     { href: "/", label: "Home" },
@@ -26,7 +29,7 @@ export function MobileNav() {
       <SheetContent side="left" className="flex flex-col p-6">
         <div className="px-2">
           <Link
-            to="/"
+            href="/"
             className="text-xl font-bold"
             onClick={() => setOpen(false)}>
             Rakhel Cakra K.S
@@ -36,7 +39,7 @@ export function MobileNav() {
           {routes.map((route) => (
             <Link
               key={route.href}
-              to={route.href}
+              href={route.href}
               className={`rounded-md px-2 py-1 text-lg font-medium transition-colors ${
                 pathname === route.href
                   ? "bg-primary/10 text-primary"
@@ -49,7 +52,7 @@ export function MobileNav() {
         </nav>
         <div className="mt-auto pt-8">
           <Button asChild className="w-full" onClick={() => setOpen(false)}>
-            <Link to="/contact">Hire Me</Link>
+            <Link href="/contact">Hire Me</Link>
           </Button>
         </div>
       </SheetContent>

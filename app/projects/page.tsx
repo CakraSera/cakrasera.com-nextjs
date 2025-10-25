@@ -10,27 +10,6 @@ import type { ProjectCategory } from "@/types";
 import { projectsData } from "@/data/projects";
 import Link from "next/link";
 
-export type ProjectCategory =
-  | "All"
-  | "Fullstack"
-  | "Frontend"
-  | "Backend"
-  | "Mobile"
-  | "Bootcamp"
-  | "Learning"
-  | "Other";
-
-export interface Project {
-  slug: string;
-  title: string;
-  shortDescription: string;
-  image?: string;
-  tags: string[];
-  liveLink?: string;
-  githubLink?: string;
-  category: ProjectCategory;
-}
-
 export default function Projects() {
   const categories: ProjectCategory[] = [
     "All",
