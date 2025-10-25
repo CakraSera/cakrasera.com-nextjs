@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { Button } from "~/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { ModeToggle } from "./mode-toggle";
 import { MobileNav } from "./mobile-nav";
 
@@ -25,14 +25,12 @@ export function Header() {
           </NavLink> */}
           <NavLink
             to="/projects"
-            className={`text-sm font-medium transition-colors`}
-          >
+            className={`text-sm font-medium transition-colors`}>
             Projects
           </NavLink>
           <NavLink
             to="/contact"
-            className={`text-sm font-medium transition-colors`}
-          >
+            className={`text-sm font-medium transition-colors`}>
             Contact
           </NavLink>
         </nav>
