@@ -40,7 +40,7 @@ const skillIcons: { [key: string]: React.ElementType } = {
 };
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Rakhel Cakra Kusumadinata Sera",
   description:
     "Rakhel Cakra Kusumadinata Sera - Fullstack Web Developer from Indonesia. Experienced in React, Next.js, Node.js, TypeScript, Vue.js, and modern web technologies. View my projects and experience.",
   openGraph: {
