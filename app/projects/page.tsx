@@ -16,10 +16,6 @@ export default function Projects() {
     "Fullstack",
     "Frontend",
     "Backend",
-    "Mobile",
-    "Bootcamp",
-    "Learning",
-    "Other",
   ];
   const [selectedCategory, setSelectedCategory] =
     useState<ProjectCategory>("All");
@@ -29,7 +25,7 @@ export default function Projects() {
       return projectsData;
     }
     return projectsData.filter(
-      (project) => project.category === selectedCategory
+      (project) => project.category === selectedCategory,
     );
   }, [selectedCategory]);
 
@@ -55,7 +51,8 @@ export default function Projects() {
               key={category}
               variant={selectedCategory === category ? "default" : "outline"}
               onClick={() => setSelectedCategory(category)}
-              className="rounded-full px-4 py-2 text-sm">
+              className="rounded-full px-4 py-2 text-sm"
+            >
               {category}
             </Button>
           ))}
@@ -99,11 +96,13 @@ export default function Projects() {
                       variant="outline"
                       size="sm"
                       asChild
-                      className="gap-1 bg-transparent">
+                      className="gap-1 bg-transparent"
+                    >
                       <a
                         href={project.liveLink}
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="mr-1 h-4 w-4" /> Live Demo
                       </a>
                     </Button>
@@ -113,11 +112,13 @@ export default function Projects() {
                       variant="outline"
                       size="sm"
                       asChild
-                      className="gap-1 bg-transparent">
+                      className="gap-1 bg-transparent"
+                    >
                       <a
                         href={project.githubLink}
                         target="_blank"
-                        rel="noopener noreferrer">
+                        rel="noopener noreferrer"
+                      >
                         <Github className="mr-1 h-4 w-4" /> GitHub
                       </a>
                     </Button>
@@ -126,7 +127,8 @@ export default function Projects() {
                     variant="outline"
                     size="sm"
                     asChild
-                    className="gap-1 bg-transparent">
+                    className="gap-1 bg-transparent"
+                  >
                     <Link href={`/projects/${project.slug}`}>
                       <Eye /> View Detail
                     </Link>

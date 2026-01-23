@@ -16,12 +16,15 @@ import {
   Palette,
   ExternalLink,
   Eye,
+  Flame,
 } from "lucide-react";
 import { format } from "date-fns";
 
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { projectsData } from "@/data/projects";
+import { SkillsCarousel } from "@/components/skills-carousel";
+
+import { projectsData, featuredProjectsSlugs } from "@/data/projects";
 import { Card, CardContent } from "@/components/ui/card";
 import { WorkExperience } from "@/data/work-experience";
 import type { Metadata } from "next";
@@ -37,6 +40,8 @@ const skillIcons: { [key: string]: React.ElementType } = {
   "Tailwind CSS": Palette,
   MongoDB: Database,
   Express: Server,
+  "Hono Js": Flame,
+  PostgreSQL: Database,
 };
 
 export const metadata: Metadata = {
@@ -70,18 +75,13 @@ export default function Home() {
               Open to opportunities
             </Badge>
             <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">
-              Hi, I&apos;m{" "}
-              <span className="text-primary">
-                Rakhel Cakra Kusumadinata Sera 👋
-              </span>
+              Hi, I'm <span className="text-primary">Cakra 👋</span>
               <br />
-              <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
-                Fullstack Web Developer
-              </span>
+              Fullstack Web Developer
             </h1>
             <p className="text-muted-foreground mx-auto max-w-md text-base sm:text-lg md:mx-0 md:text-xl">
               Passionate about building web applications and constantly learning
-              new technologies. Experienced in React, Next.js, Node.js, Vue.js,
+              new technologies. Experienced in React, Golang, Next.js, Node.js,
               and TypeScript.
             </p>
             <div className="flex flex-wrap justify-center gap-4 md:justify-start">
@@ -99,7 +99,8 @@ export default function Home() {
                 href="https://github.com/CakraSera"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors">
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Github className="h-6 w-6" />
                 <span className="sr-only">GitHub</span>
               </a>
@@ -107,13 +108,15 @@ export default function Home() {
                 href="https://www.linkedin.com/in/rakhelcakrakusumadinatasera/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-muted-foreground hover:text-foreground transition-colors">
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Linkedin className="h-6 w-6" />
                 <span className="sr-only">LinkedIn</span>
               </a>
               <a
                 href="mailto:hello@example.com"
-                className="text-muted-foreground hover:text-foreground transition-colors">
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
                 <Mail className="h-6 w-6" />
                 <span className="sr-only">Email</span>
               </a>
@@ -123,8 +126,8 @@ export default function Home() {
             <div className="border-primary/20 relative h-64 w-64 overflow-hidden rounded-full border-4 sm:h-72 sm:w-72 md:h-80 md:w-80">
               <Image
                 src="/images/web-profile-img.jpg"
-                alt="Developer portrait"
                 fill
+                alt="Developer portrait"
                 className="object-cover"
                 priority
               />
@@ -150,7 +153,8 @@ export default function Home() {
               {WorkExperience.map((record) => (
                 <div
                   key={record.companyName}
-                  className="bg-background rounded-lg border p-6 shadow-sm">
+                  className="bg-background rounded-lg border p-6 shadow-sm"
+                >
                   <div className="flex items-start gap-4">
                     <div className="bg-primary/10 rounded-full p-3">
                       <Briefcase className="text-primary h-6 w-6" />
@@ -182,44 +186,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Skills Preview Section */}
       <section className="container mx-auto py-16 md:py-24">
         <div className="space-y-12">
           <div className="mx-auto max-w-3xl space-y-4 text-center">
             <h2 className="text-3xl font-bold md:text-4xl">My Skills</h2>
             <p className="text-muted-foreground text-lg">
-              Technologies I&apos;ve been working with recently.
+              Technologies I've been working with recently.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-4">
-            {[
-              "HTML & CSS",
-              "JavaScript",
-              "React",
-              "Next.js",
-              "Node.js",
-              "Express",
-              "Hono Js",
-              "Golang",
-              "Vue.js",
-              "Nuxt.js",
-              "TypeScript",
-              "Tailwind CSS",
-              "MongoDB",
-              "MySQL",
-              "PostgreSQL",
-            ].map((skill, index) => {
-              const Icon = skillIcons[skill] || Code;
-              return (
-                <div
-                  key={index}
-                  className="bg-background flex flex-col items-center rounded-lg border p-6 text-center shadow-sm">
-                  {Icon && <Icon className="text-primary mb-3 h-8 w-8" />}
-                  <h3 className="text-lg font-medium">{skill}</h3>
-                </div>
-              );
-            })}
-          </div>
+          <SkillsCarousel />
           <div className="pt-4 text-center">
             <Button variant="outline" asChild>
               <Link href="/about#skills">
@@ -241,76 +216,84 @@ export default function Home() {
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projectsData.map((project) => (
-              <Card
-                key={project.slug}
-                className="group bg-background overflow-hidden rounded-lg border shadow-sm">
-                <Link href={`/projects/${project.slug}`}>
-                  <div className="relative h-48 w-full overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform group-hover:scale-105"
-                    />
-                  </div>
-                  <CardContent className="p-4 sm:p-6">
-                    <div className="space-y-4">
-                      <h3 className="text-xl font-bold">{project.title}</h3>
-                      <p className="text-muted-foreground text-sm">
-                        {project.shortDescription}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag, tagIndex) => (
-                          <Badge key={tagIndex} variant="secondary">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
+            {projectsData
+              .filter((project) => featuredProjectsSlugs.includes(project.slug))
+              .map((project) => (
+                <Card
+                  key={project.slug}
+                  className="group bg-background overflow-hidden rounded-lg border shadow-sm"
+                >
+                  <Link href={`/projects/${project.slug}`}>
+                    <div className="relative h-48 w-full overflow-hidden">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform group-hover:scale-105"
+                      />
                     </div>
-                  </CardContent>
-                </Link>
-                <div className="flex flex-wrap gap-3 p-4 pt-0">
-                  {project.liveLink && (
+                    <CardContent className="p-4 sm:p-6">
+                      <div className="space-y-4">
+                        <h3 className="text-xl font-bold">{project.title}</h3>
+                        <p className="text-muted-foreground text-sm">
+                          {project.shortDescription}
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {project.tags.map((tag, tagIndex) => (
+                            <Badge key={tagIndex} variant="secondary">
+                              {tag}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Link>
+                  <div className="flex flex-wrap gap-3 p-4 pt-0">
+                    {project.liveLink && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="gap-1 bg-transparent"
+                      >
+                        <a
+                          href={project.liveLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="mr-1 h-4 w-4" /> Live Demo
+                        </a>
+                      </Button>
+                    )}
+                    {project.githubLink && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        asChild
+                        className="gap-1 bg-transparent"
+                      >
+                        <a
+                          href={project.githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="mr-1 h-4 w-4" /> GitHub
+                        </a>
+                      </Button>
+                    )}
                     <Button
                       variant="outline"
                       size="sm"
                       asChild
-                      className="gap-1 bg-transparent">
-                      <a
-                        href={project.liveLink}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <ExternalLink className="mr-1 h-4 w-4" /> Live Demo
-                      </a>
+                      className="gap-1 bg-transparent"
+                    >
+                      <Link href={`/projects/${project.slug}`}>
+                        <Eye /> View Detail
+                      </Link>
                     </Button>
-                  )}
-                  {project.githubLink && (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      asChild
-                      className="gap-1 bg-transparent">
-                      <a
-                        href={project.githubLink}
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <Github className="mr-1 h-4 w-4" /> GitHub
-                      </a>
-                    </Button>
-                  )}
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    asChild
-                    className="gap-1 bg-transparent">
-                    <Link href={`/projects/${project.slug}`}>
-                      <Eye /> View Detail
-                    </Link>
-                  </Button>
-                </div>
-              </Card>
-            ))}
+                  </div>
+                </Card>
+              ))}
           </div>
           <div className="pt-4 text-center">
             <Button asChild>
@@ -337,8 +320,8 @@ export default function Home() {
               <Link href="/contact">Get in Touch</Link>
             </Button>
             <Button size="lg" variant="outline" asChild>
-              <a href="/resume.pdf" target="_blank">
-                View Resume
+              <a href="/resume/resume_rakhel-cakra.pdf" download>
+                Download Resume
               </a>
             </Button>
           </div>

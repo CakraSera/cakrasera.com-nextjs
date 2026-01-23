@@ -26,8 +26,7 @@ export default function AboutPage() {
               About Me
             </Badge>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
-              Hi, I&apos;m Rakhel Cakra Kusumadinata Sera — a fullstack web
-              developer. 😎
+              Hi, I&apos;m Cakra — a fullstack web developer. 😎
             </h1>
             <p className="text-muted-foreground text-lg">
               Hey, I&apos;m Cakra (full name: Rakhel Cakra Kusumadinata Sera) –
@@ -71,7 +70,8 @@ export default function AboutPage() {
                   <p className="text-sm text-muted-foreground">Contact</p>
                   <a
                     href="mailto:rakelsera2001@gmail.com"
-                    className="font-medium hover:text-primary transition-colors">
+                    className="font-medium hover:text-primary transition-colors"
+                  >
                     rakelsera2001@gmail.com
                   </a>
                 </div>
@@ -103,18 +103,18 @@ export default function AboutPage() {
             <p>
               I kicked off my tech adventure with a degree in Informatic
               Engineering from Universitas Palangka Raya. My first gig? Building
-              the frontend for Narai Coder&apos;s community web using HTML, CSS, and
-              Bootstrap. But I knew it could be better – so I leveled up through
-              bootcamps like &quot;How to be an Ideal Top Search React JS Front-End
-              Engineer,&quot; Generasi GIGIH Full Stack Engineer, and Bearmentor
-              Batch 8 (shoutout to Mas Haidar Hanif for the awesome
-              mentorship!🫡).
+              the frontend for Narai Coder&apos;s community web using HTML, CSS,
+              and Bootstrap. But I knew it could be better – so I leveled up
+              through bootcamps like &quot;How to be an Ideal Top Search React
+              JS Front-End Engineer,&quot; Generasi GIGIH Full Stack Engineer,
+              and Bearmentor Batch 8 (shoutout to Mas Haidar Hanif for the
+              awesome mentorship!🫡).
             </p>
             <p>
               These days, I&apos;m practicing component-driven development with
               React, using Next.js to ship fullstack features quickly, and
-              deploying to Vercel. I still learn every day – whether it&apos;s new
-              frameworks, design patterns, or best practices💪.
+              deploying to Vercel. I still learn every day – whether it&apos;s
+              new frameworks, design patterns, or best practices💪.
             </p>
           </div>
 
@@ -229,13 +229,15 @@ export default function AboutPage() {
                 ].map((card, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl border bg-background/60 p-5 sm:p-6 shadow-sm">
+                    className="rounded-xl border bg-background/60 p-5 sm:p-6 shadow-sm"
+                  >
                     <h3 className="text-lg font-semibold">{card.title}</h3>
                     <ul className="mt-4 space-y-3">
                       {card.items.map((it, i) => (
                         <li
                           key={i}
-                          className="flex items-start gap-3 text-foreground/90">
+                          className="flex items-start gap-3 text-foreground/90"
+                        >
                           <it.icon className="h-4 w-4 text-primary mt-0.5" />
                           <span className="text-sm sm:text-base">
                             {it.text}
@@ -261,11 +263,11 @@ export default function AboutPage() {
             It&apos;s like full-stack dev: I treat each workout like building an
             end-to-end app, tweaking stacks (Node.js + React, anyone?) until the
             flow is perfect, APIs integrate smoothly, and everything scales. My
-            motto? &quot;Try something. If it&apos;s failed then learn faster.&quot; From buggy
-            early projects, I&apos;ve bounced back via intense bootcamps, Udemy
-            self-learning, and tools like Docker – turning setbacks into
-            scalable wins. Resilience is key in this fast-paced tech world, just
-            like an athlete rising after a loss.
+            motto? &quot;Try something. If it&apos;s failed then learn
+            faster.&quot; From buggy early projects, I&apos;ve bounced back via
+            intense bootcamps, Udemy self-learning, and tools like Docker –
+            turning setbacks into scalable wins. Resilience is key in this
+            fast-paced tech world, just like an athlete rising after a loss.
           </p>
         </div>
       </section>
