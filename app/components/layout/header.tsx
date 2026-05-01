@@ -26,7 +26,8 @@ export function Header() {
               pathname === "/"
                 ? "text-primary"
                 : "text-foreground/70 hover:text-primary"
-            }`}>
+            }`}
+          >
             Home
           </Link>
           {/* <Link
@@ -40,8 +41,19 @@ export function Header() {
               pathname === "/projects"
                 ? "text-primary"
                 : "text-foreground/70 hover:text-primary"
-            }`}>
+            }`}
+          >
             Projects
+          </Link>
+          <Link
+            href="/protokol"
+            className={`text-sm font-medium transition-colors ${
+              pathname === "/protokol"
+                ? "text-primary"
+                : "text-foreground/70 hover:text-primary"
+            }`}
+          >
+            Protokol
           </Link>
           <Link
             href="/contact"
@@ -49,7 +61,8 @@ export function Header() {
               pathname === "/contact"
                 ? "text-primary"
                 : "text-foreground/70 hover:text-primary"
-            }`}>
+            }`}
+          >
             Contact
           </Link>
         </nav>
