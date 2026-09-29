@@ -3,6 +3,7 @@ export type ProjectCategory =
   | "Fullstack"
   | "Frontend"
   | "Backend"
+  | "AI"
   | "Mobile"
   | "Bootcamp"
   | "Learning"
