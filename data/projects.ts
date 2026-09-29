@@ -17,7 +17,12 @@ import {
   Globe,
 } from "lucide-react";
 
-export type ProjectCategory = "All" | "Fullstack" | "Frontend" | "Backend";
+export type ProjectCategory =
+  | "All"
+  | "Fullstack"
+  | "Frontend"
+  | "Backend"
+  | "AI";
 
 export interface Project {
   slug: string;
@@ -77,7 +82,7 @@ export const skillIcons: { [key: string]: LucideIcon } = {
 export const featuredProjectsSlugs: readonly [string, string, string] = [
   "kendarago",
   "fitlex",
-  "kanban-board",
+  "runmax",
 ];
 
 export const projectsData: Project[] = [
@@ -382,6 +387,60 @@ export const projectsData: Project[] = [
       "RESTful API design for resource relationships",
       "Docker containerization and docker-compose orchestration",
       "Database schema design and normalization",
+    ],
+  },
+  {
+    slug: "runmax",
+    title: "RunMax",
+    shortDescription:
+      "An AI-powered running planner that turns a runner's messy weekly log into a structured Monday-Sunday training board.",
+    longDescription: [
+      "RunMax turns one runner's week of running — captured as an optional, messy log — into a structured Monday-to-Sunday plan shown as a mobile-first Board. Home is the Board, not chat: seven Session cards that balance quality running, easy days, and rest.",
+      "The system is built around two AI agents with strictly separated responsibilities. Weeksmith is the only agent allowed to draft, check, and save a Week, while ConsultSmith interviews the runner, writes the Log, and hands off. Product rules are enforced fail-closed in a shared domain package, so an illegal Week can never persist.",
+      "Built as a pnpm monorepo with a Vite and React frontend, a Hono API, and PostgreSQL persistence, the project pairs agentic workflows with an offline golden-fixture eval suite and Langfuse tracing for full observability.",
+    ],
+    category: "AI",
+    tags: [
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "AI Agents",
+      "Hono",
+      "PostgreSQL",
+    ],
+    image: "/images/projects/runmax.png",
+    githubLink: "https://github.com/CakraSera/RunMax",
+    features: [
+      "Board view with 7 Session cards, Monday to Sunday",
+      "Weeksmith agent workflow: parseLog to saveWeek in a fixed order",
+      "ConsultSmith chat that interviews the runner and hands off to Weeksmith",
+      "Fail-closed product rules: at most 1 hard session, at least 1 rest or walk, pain gating",
+      "MCP notes server produced and consumed within the same workspace",
+      "Golden-fixture evals and Langfuse tracing for agent observability",
+    ],
+    technologiesUsed: [
+      "TypeScript",
+      "React",
+      "Vite",
+      "TanStack Router",
+      "Tailwind CSS",
+      "Hono",
+      "PostgreSQL",
+      "Prisma",
+      "MCP",
+      "Langfuse",
+    ],
+    challenges: [
+      "Enforcing product rules fail-closed so illegal training weeks can never be saved",
+      "Giving a single agent exclusive ownership of draft, check, and save to keep the pipeline auditable",
+      "Designing an MCP notes server that the same workspace both produces and consumes",
+      "Verifying non-deterministic model output with golden-fixture evals instead of unit tests",
+    ],
+    learnings: [
+      "Designing agentic workflows with fixed tool order and explicit handoffs",
+      "Fail-closed validation as the safety net for non-deterministic model output",
+      "Agent observability with tracing spans per agent, model turn, and tool call",
+      "Monorepo layering with shared domain rules that carry no model dependency",
     ],
   },
 ];
